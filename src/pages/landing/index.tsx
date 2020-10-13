@@ -1,8 +1,9 @@
 import React from "react";
 import { FiArrowRight } from "react-icons/fi";
 
-import { Content, Wrapper, Main, Location, Enter } from "./style";
+import { Content, Wrapper, Main, Location } from "./style";
 import logoImg from "../../assets/img/logo.svg";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
@@ -20,9 +21,9 @@ export default function Landing() {
           <span>Pará</span>
         </Location>
 
-        <Enter>
+        <Link to="/app">
           <FiArrowRight size={26} color="rgba(0,0,0,0.6)" />
-        </Enter>
+        </Link>
       </Content>
     </Wrapper>
   );

@@ -24,6 +24,27 @@ export const Content = styled.div`
   justify-content: space-between;
 
   background: url(${ladingBgImage}) no-repeat 80% center;
+
+  a {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 80px;
+    height: 80px;
+    background: #ffd666;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color 0.2;
+
+    &:hover {
+      background: #96feff;
+    }
+  }
 `;
 
 export const Main = styled.main`
@@ -64,7 +85,7 @@ export const Location = styled.div`
     font-weight: 800;
   }
 `;
-
+/* 
 export const Enter = styled.a`
   position: absolute;
   right: 0;
@@ -84,4 +105,4 @@ export const Enter = styled.a`
   &:hover {
     background: #96feff;
   }
-`;
+`; */
