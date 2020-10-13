@@ -10,23 +10,27 @@ export const Wrapper = styled.div`
     position: absolute;
     right: 40px;
     bottom: 40px;
+    z-index: 100;
     width: 64px;
     height: 64px;
-    border-radius: 28px;
+    background: #15c3d6;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.2s;
-    background: #15c3d6;
 
     &:hover {
       background: #17d6eb;
     }
   }
+
+  .leaflet-container {
+    z-index: 5;
+  }
 `;
 
 export const Aside = styled.aside`
-  width: 380px;
+  width: 440px;
   background: linear-gradient(329.54deg, #2986d1 8%, #88c7c7 100%);
   padding: 80px;
   display: flex;
@@ -56,4 +60,8 @@ export const Footer = styled.footer`
   strong {
     font-weight: 800;
   }
+`;
+
+export const Orphanage = styled.div`
+  display: block;
 `;
