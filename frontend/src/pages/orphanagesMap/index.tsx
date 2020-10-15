@@ -40,14 +40,14 @@ export default function OrphanagesMap() {
         <Marker icon={mapIcon} position={[-1.4496701, -48.4839197]}>
           <Popup minWidth={240} maxWidth={240} closeButton={false}>
             lorem ipsum
-            <Link to="/">
+            <Link to="/orphanages/1">
               <FiArrowRight size={20} color={"#fff"} />
             </Link>
           </Popup>
         </Marker>
       </Map>
 
-      <Link to="/">
+      <Link to="/orphanages/create">
         <FiPlus size={32} color="#fff" />
       </Link>
     </Wrapper>

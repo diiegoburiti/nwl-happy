@@ -76,11 +76,11 @@ export const Images = styled.div`
     border-radius: 20px;
     overflow: hidden;
     outline: none;
-
     opacity: 0.6;
 
     .active {
       opacity: 1;
+      background: #000;
     }
   }
 
