@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiPlus } from "react-icons/fi";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import { Wrapper, Aside, Footer, Header } from "./style";
 import mapMarketImg from "../../assets/img/map-market.svg";
 import mapIcon from "../../utils/mapIcon";
+import api from "../../services/api";
 
 /* const mapIcon = Leaflet.icon({
   iconUrl: mapMarketImg,
@@ -13,7 +14,23 @@ import mapIcon from "../../utils/mapIcon";
   popupAnchor: [170, 2],
 }); */
 
+interface Orphanage {
+  id: number;
+  latitude: number;
+  longitude: number;
+  name: string;
+}
+
 export default function OrphanagesMap() {
+  const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
+
+  useEffect(() => {
+    api.get("/orphanages").then((response) => {
+      setOrphanages(response.data);
+      console.log(response.data);
+    });
+  }, []);
+
   return (
     <Wrapper>
       <Aside>
@@ -38,14 +55,31 @@ export default function OrphanagesMap() {
           url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
         />
 
-        <Marker icon={mapIcon} position={[-1.4496701, -48.4839197]}>
+        {orphanages.map((orphanage) => {
+          return (
+            <Marker
+              key={orphanage.id}
+              icon={mapIcon}
+              position={[orphanage.latitude, orphanage.longitude]}
+            >
+              <Popup minWidth={240} maxWidth={240} closeButton={false}>
+                {orphanage.name}
+                <Link to={`/orphanages/${orphanage.id}`}>
+                  <FiArrowRight size={20} color={"#fff"} />
+                </Link>
+              </Popup>
+            </Marker>
+          );
+        })}
+
+        {/*  <Marker icon={mapIcon} position={[-1.4496701, -48.4839197]}>
           <Popup minWidth={240} maxWidth={240} closeButton={false}>
             lorem ipsum
             <Link to="/orphanages/1">
               <FiArrowRight size={20} color={"#fff"} />
             </Link>
           </Popup>
-        </Marker>
+        </Marker> */}
       </Map>
 
       <Link to="/orphanages/create">
