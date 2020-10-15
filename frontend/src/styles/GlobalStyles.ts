@@ -9,7 +9,7 @@ export default createGlobalStyle`
 
 body {
   color: #fff;
-  background: #feb2f5;
+  background: #ebf2f5;
 }
 
 body, input, textarea, button {
