@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Popup } from "react-leaflet";
 
 export const Wrapper = styled.div`
   width: 100vw;
@@ -26,6 +27,36 @@ export const Wrapper = styled.div`
 
   .leaflet-container {
     z-index: 5;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 8.8);
+    border-radius: 20px;
+  }
+
+  .leaflet-popup-content {
+    color: #0089a5;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    a {
+      width: 40px;
+      height: 40px;
+      background: #15c3d6;
+      box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16);
+      border-radius: 12px;
+      position: absolute;
+      bottom: -20%;
+      right: 0px;
+    }
+  }
+  .leaflet-popup-tip-container {
+    display: none;
   }
 `;
 
@@ -65,3 +96,8 @@ export const Footer = styled.footer`
 export const Orphanage = styled.div`
   display: block;
 `;
+
+/* export const PopupSWrapper = styled(Popup)`
+  background: red;
+  border-radius: 20px;
+`; */
