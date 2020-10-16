@@ -4,6 +4,7 @@ import { FiClock, FiInfo } from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
 
 import {
+  CloseddOnWeekends,
   ContactButton,
   Hour,
   Images,
@@ -71,10 +72,7 @@ export default function Orphanage() {
                   type="button"
                   onClick={() => setactiveImageIndex(index)}
                 >
-                  <img
-                    src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg"
-                    alt="Lar das meninas"
-                  />
+                  <img src={image.url} alt={orphanage.name} />
                 </button>
               );
             })}
@@ -135,11 +133,11 @@ export default function Orphanage() {
                   fim de semana
                 </OpenOnWeekends>
               ) : (
-                <OpenOnWeekends>
+                <CloseddOnWeekends>
                   <FiInfo size={32} color="#FFF6690" />
                   Não atendemos <br />
                   fim de semana
-                </OpenOnWeekends>
+                </CloseddOnWeekends>
               )}
             </OpenDetails>
 

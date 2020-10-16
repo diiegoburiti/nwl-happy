@@ -41,10 +41,10 @@ export const Images = styled.div`
     overflow: hidden;
     outline: none;
     opacity: 0.6;
+    transition: 0.2s all;
 
-    .active {
+    &.active {
       opacity: 1;
-      background: #000;
     }
   }
 
@@ -137,6 +137,12 @@ export const OpenOnWeekends = styled.div`
   background: linear-gradient(154.16deg, #edfff6 7.85%, #ffffff 91.03%);
   border: 1px solid #a1e9c5;
   color: #37c77f;
+`;
+
+export const CloseddOnWeekends = styled(OpenOnWeekends)`
+  background: linear-gradient(154.16deg, #fdf8f5 7.85%, #ffffff 91.03%);
+  border: 1px solid #ffbcd4;
+  color: #ff669d;
 `;
 
 export const ContactButton = styled.button`
