@@ -2,7 +2,6 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { LeafletMouseEvent } from "leaflet";
 import { FiPlus } from "react-icons/fi";
-
 import {
   Wrapper,
   MainContent,
@@ -10,7 +9,6 @@ import {
   InputBlock,
   NewImage,
   ButtonSelect,
-  Active,
   ConfirmButton,
   ImagesContainer,
 } from "./style";
@@ -60,16 +58,6 @@ export default function CreateOrphanage() {
     alert("Cadastrado com sucesso");
 
     history.push("/app");
-    /* console.log(
-      latitude,
-      longitude,
-      name,
-      about,
-      instructions,
-      opening_hours,
-      open_on_weekends,
-      images,
-    ) */
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
@@ -205,5 +193,3 @@ export default function CreateOrphanage() {
     </Wrapper>
   );
 }
-
-// return `https://a.tile.openstreetmap.org/${z}/${x}/${y}.png`;

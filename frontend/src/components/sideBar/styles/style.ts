@@ -29,9 +29,9 @@ export const AsideFooter = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-  }
 
-  &:hover {
-    background: #17d6eb;
+    &:hover {
+      background: #17d6eb;
+    }
   }
 `;
