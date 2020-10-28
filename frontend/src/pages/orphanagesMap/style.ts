@@ -63,7 +63,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Aside = styled.aside`
-  width: 440px;
+  width: clamp(24rem, 25vw, 44rem);
   background: linear-gradient(329.54deg, #2986d1 8%, #88c7c7 100%);
   padding: 80px;
   display: flex;
