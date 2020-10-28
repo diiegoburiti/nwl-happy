@@ -24,10 +24,11 @@ export default function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
   useEffect(() => {
-    api.get("/orphanages").then((response) => {
+    const getLocations = async () => {
+      const response = await api.get("/orphanages")
       setOrphanages(response.data);
-      console.log(response.data);
-    });
+    } 
+    getLocations();
   }, []);
 
   return (
