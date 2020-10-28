@@ -12,12 +12,12 @@ export const MainContent = styled.main`
 export const OrphanageDetails = styled.div`
   width: 700px;
   margin: 64px auto;
-
   background: #ffffff;
   border: 1px solid #d3e2e5;
   border-radius: 20px;
-
   overflow: hidden;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+
 
   > img {
     width: 100%;
@@ -91,6 +91,7 @@ export const MapContainer = styled.div`
   background: #e6f7fb;
   border: 1px solid #b3dae2;
   border-radius: 20px;
+  box-shadow: 1px 1px 10px 0px rgba(44, 44, 44, 0.15);
 
   .leaflet-container {
     border-bottom: 1px solid #dde3f0;
