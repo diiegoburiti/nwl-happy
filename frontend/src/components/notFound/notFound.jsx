@@ -1,11 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Container, LinkHome, Title, Wrapper } from "./styles/style";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function NotFound() {
   return (
-    <div>
-      <h1>404 - Not Found!</h1>
-      <Link to="/">Go Home</Link>
-    </div>
+    <Container>
+      <Wrapper>
+        <Title>Pagina não encontrada!</Title>
+        <LinkHome to="/">
+          <FiArrowRight size={24} color="#FFF" />
+          Voltar para pagina de início.
+        </LinkHome>
+      </Wrapper>
+    </Container>
   );
 }
