@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { Link as ReactRouterLink } from "react-router-dom";
+
+export const ButtonLink = styled(ReactRouterLink)``
 
 export const Wrapper = styled.div`
   width: 100vw;
@@ -6,7 +9,7 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
 
-  a {
+  ${ButtonLink} {
     position: absolute;
     right: 40px;
     bottom: 40px;

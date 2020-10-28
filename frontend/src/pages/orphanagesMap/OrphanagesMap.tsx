@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { FiArrowRight, FiPlus } from "react-icons/fi";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import { Wrapper, Aside, Footer, Header } from "./style";
+import { Wrapper, Aside, Footer, Header, ButtonLink } from "./style";
 import mapMarketImg from "../../assets/img/map-market.svg";
 import mapIcon from "../../utils/mapIcon";
 import api from "../../services/api";
@@ -64,9 +63,9 @@ export default function OrphanagesMap() {
             >
               <Popup minWidth={240} maxWidth={240} closeButton={false}>
                 {orphanage.name}
-                <Link to={`/orphanages/${orphanage.id}`}>
+                <ButtonLink to={`/orphanages/${orphanage.id}`}>
                   <FiArrowRight size={20} color={"#fff"} />
-                </Link>
+                </ButtonLink>
               </Popup>
             </Marker>
           );
@@ -75,16 +74,16 @@ export default function OrphanagesMap() {
         {/*  <Marker icon={mapIcon} position={[-1.4496701, -48.4839197]}>
           <Popup minWidth={240} maxWidth={240} closeButton={false}>
             lorem ipsum
-            <Link to="/orphanages/1">
+            <ButtonLink to="/orphanages/1">
               <FiArrowRight size={20} color={"#fff"} />
-            </Link>
+            </ButtonLink>
           </Popup>
         </Marker> */}
       </Map>
 
-      <Link to="/orphanages/create">
+      <ButtonLink to="/orphanages/create">
         <FiPlus size={32} color="#fff" />
-      </Link>
+      </ButtonLink>
     </Wrapper>
   );
 }
