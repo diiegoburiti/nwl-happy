@@ -21,7 +21,7 @@ export default function Landing() {
           <span>Pará</span>
         </Location>
 
-        <Link to="/app">
+        <Link to="/map">
           <FiArrowRight size={26} color="rgba(0,0,0,0.6)" />
         </Link>
       </Content>
